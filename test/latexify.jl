@@ -15,9 +15,9 @@ Dy = Differential(y)
 
 @test_reference "latexify_refs/inverse.txt" latexify(x^-1)
 
-@test_reference "latexify_refs/integral1.txt" latexify(Integral(dx in Interval(0,1))(x))
-@test_reference "latexify_refs/integral2.txt" latexify(Integral(dx in Interval(-Inf,Inf))(u^2))
-@test_reference "latexify_refs/integral3.txt" latexify(Integral(dx in Interval(-z,u))(x^2))
+@test_reference "latexify_refs/integral1.txt" latexify(Integral(x in Interval(0,1))(x))
+@test_reference "latexify_refs/integral2.txt" latexify(Integral(x in Interval(-Inf,Inf))(u^2))
+@test_reference "latexify_refs/integral3.txt" latexify(Integral(x in Interval(-z,u))(x^2))
 
 @test_reference "latexify_refs/frac1.txt" latexify((z + x*y^-1) / sin(z))
 @test_reference "latexify_refs/frac2.txt"  latexify((3x - 7y*z^23) * (z - z^2) / x)

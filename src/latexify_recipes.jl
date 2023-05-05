@@ -32,8 +32,7 @@ function latexify_derivatives(ex)
         lower_s = strip(latexify(lower).s, '\$')
         upper_s = strip(latexify(upper).s, '\$')
         return Expr(:call, :*,
-                "\\int_{$lower_s}^{$upper_s)}",
-                var_of_int,
+		    "\\int_{$lower_s}^{$upper_s)}\\mathrm{d}$(var_of_int)",
                 integrand
             )
         elseif x.args[1] === :_textbf
